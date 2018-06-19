@@ -288,7 +288,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/11/first/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/19/iframe/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="唐宋元明清">
@@ -307,7 +307,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/06/11/first/" itemprop="url">未命名</a></h1>
+                <a class="post-title-link" href="/2018/06/19/iframe/" itemprop="url">未命名</a></h1>
         
 
         <div class="post-meta">
@@ -319,8 +319,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-11T22:23:31+08:00">
-                2018-06-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-19T15:10:22+08:00">
+                2018-06-19
               </time>
             
 
@@ -337,7 +337,7 @@
 
           
           
-             <span id="/2018/06/11/first/" class="leancloud_visitors" data-flag-title="">
+             <span id="/2018/06/19/iframe/" class="leancloud_visitors" data-flag-title="">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -370,9 +370,183 @@
       
         
           
-            <hr>
-<p>title: first<br>date: 2018-06-11 22:23:30</p>
-<h2 id="tags"><a href="#tags" class="headerlink" title="tags:"></a>tags:</h2><p>���ڴ���Լ��Ĳ�����</p>
+            <h1 id="iframe简单介绍"><a href="#iframe简单介绍" class="headerlink" title="iframe简单介绍"></a>iframe简单介绍</h1><p>Iframe可以用在以下几个场景</p>
+<p>1.典型系统结构,左侧是功能树,右侧就是一些常见table或者表单之类的.为了每一个功能,单独分离出来,采用iframe.</p>
+<p>2.AJAX上传文件</p>
+<p>3.加载别的网站内容,例如广告,网站流量分析.</p>
+<p>4.在上传图片时,不用flash实现无刷新</p>
+<p>5.跨域访问的时候可以用到iframe,使用iframe请求不同域名下的资源</p>
+<p>演示iframe的基本用法</p>
+<p>iframe的各个属性含义如下：<br>width插入页的宽；</p>
+<p>height插入页的高；</p>
+<p>scrolling 是否显示页面滚动条（可选的参数为 auto、yes、no，如果省略这个参数，则默认为auto）；</p>
+<p>frameborder边框大小；<br>注意：URL建议用绝对路径；</p>
+<p>如果一个页面里面有框架,点页面里的连接，要求在这个<iframe> 里打开。<iframe name="**"></iframe><br>然后在修改默认打开模式,网页HEAD中加上<a href="URL" mce_href="URL" target="**">或部分连接的目标框架设为（**）.</a></iframe></p>
+<p>要插入一个页面。要求只拿中间一部分,控制插入页被框架覆盖的深度 marginwidth和marginheight.控制框架覆盖上部分的深度 vspace</p>
+<p>如果把frameborder设为1，效果就像文本框一样</p>
+<p>透明的IFRAME的用法,必需IE5.5以上版本才支持</p>
+<p>Iframe的优缺点:</p>
+<p>1.解决加载缓慢的第三方内容如图标和广告的加载问题</p>
+<p>2.Security sandbox</p>
+<p>3.并行加载脚本</p>
+<p>缺点:</p>
+<p>1.iframe会阻塞主页面的onload事件</p>
+<p>2.即时内容为空,加载也需要时间</p>
+<p>3.没有语意</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/19/懒加载和预加载的实现/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="唐宋元明清">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="唐宋元明清">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/19/懒加载和预加载的实现/" itemprop="url">未命名</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-19T15:08:45+08:00">
+                2018-06-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/06/19/懒加载和预加载的实现/" class="leancloud_visitors" data-flag-title="">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="懒加载和预加载的实现"><a href="#懒加载和预加载的实现" class="headerlink" title="懒加载和预加载的实现"></a><a href="https://www.cnblogs.com/Cathamerst/p/7445715.html" target="_blank" rel="noopener">懒加载和预加载的实现</a></h1><p>提到前端性能优化中图片资源的优化，懒加载和预加载就不能不说，下面我用最简洁明了的语言，说明懒加载和预加载的核心要点以及实现。</p>
+<h2 id="1-懒加载"><a href="#1-懒加载" class="headerlink" title="1.懒加载"></a>1.懒加载</h2><p>懒加载的要点如下：</p>
+<p>1.图片进入可视区域之后请求图片资源；</p>
+<p>2.对于电商等图片较多，页面很长的业务场景很适用；</p>
+<p>3.可以减少无效资源的加载；</p>
+<p>4.并发加载的资源过多会阻塞js的加载，影响网站的正常使用；</p>
+<p>如何实现懒加载呢？要点就是html中img标签src属性为空，给一个data属性，里面存放图片真实地址，在需要的时候，动态的将这个地址赋予图片src属性。</p>
+<p>如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src=&quot;&quot; class=&quot;image-item&quot; lazyload=&quot;true&quot; data-original=&quot;http://pic26.nipic.com/20121213/6168183_004444903000_2.jpg&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<p>类似上述代码所示，当需要时间，用js脚本控制图片的加载：</p>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">var viewHeight = document.documentElement.clientHeight // 可视区域的高度</span><br><span class="line"></span><br><span class="line">function lazyload () &#123;</span><br><span class="line">  // 获取所有要进行懒加载的图片</span><br><span class="line">  var eles = document.querySelectorAll(&apos;img[data-original][lazyload]&apos;)</span><br><span class="line">  Array.prototype.forEach.call(eles, function (item, index) &#123;</span><br><span class="line">    var rect</span><br><span class="line">    if (item.dataset.original === &apos;&apos;)</span><br><span class="line">      return</span><br><span class="line">    rect = item.getBoundingClientRect()</span><br><span class="line">    // 图片一进入可视区，动态加载</span><br><span class="line">    if (rect.bottom &gt;= 0 &amp;&amp; rect.top &lt; viewHeight) &#123;</span><br><span class="line">      !function () &#123;</span><br><span class="line">        var img = new Image()</span><br><span class="line">        img.src = item.dataset.original</span><br><span class="line">        img.onload = function () &#123;</span><br><span class="line">          item.src = img.src</span><br><span class="line">        &#125;</span><br><span class="line">        item.removeAttribute(&apos;data-original&apos;)</span><br><span class="line">        item.removeAttribute(&apos;lazyload&apos;)</span><br><span class="line">      &#125;()</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line">// 首屏要人为的调用，否则刚进入页面不显示图片</span><br><span class="line">lazyload()</span><br><span class="line"></span><br><span class="line">document.addEventListener(&apos;scroll&apos;, lazyload)</span><br></pre></td></tr></table></figure>
+<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a>;)</p>
+<h2 id="2-预加载"><a href="#2-预加载" class="headerlink" title="2.预加载"></a>2.预加载</h2><p>预加载的核心要点如下：</p>
+<p>1.图片等静态资源在使用之前的提前请求；</p>
+<p>2.资源后续使用时可以从缓存中加载，提升用户体验；</p>
+<p>3.页面展示的依赖关系维护（必需的资源加载完才可以展示页面，防止白屏等）；</p>
+<p>实现预加载主要有三个方法：</p>
+<p>1.html中img标签最初设置为display:none；</p>
+<p>2.js脚本中使用image对象动态创建好图片；</p>
+<p>3.使用XMLHttpRequest对象可以更加精细的控制预加载过程，缺点是无法跨域：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var xmlhttprequest = new XMLHttpRequest(); </span><br><span class="line">xmlhttprequest.open(&quot;GET&quot;,src,true);</span><br></pre></td></tr></table></figure>
+<p> 参考博客<a href="https://www.cnblogs.com/rlann/p/7296660.html" target="_blank" rel="noopener">https://www.cnblogs.com/rlann/p/7296660.html</a></p>
+<p><a href="https://blog.csdn.net/alex8046/article/details/50388050" target="_blank" rel="noopener">https://blog.csdn.net/alex8046/article/details/50388050</a></p>
 
           
         
@@ -597,7 +771,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
