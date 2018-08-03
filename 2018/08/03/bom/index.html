@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="cqtangsong.github.io/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="cqtangsong.github.io/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="cqtangsong.github.io/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="cqtangsong.github.io/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="cqtangsong.github.io/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="cqtangsong.github.io/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="cqtangsong.github.io/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT, 唐宋" />
+
+
+
+
+
+  <link rel="alternate" href="cqtangsong.github.io/atom.xml" title="唐宋元明清" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="BOM 浏览器对象模型1. window对象BOM对象的核心就是window对象，他表示浏览器的一个实例。Window对象既是通过js访问浏览器窗口的一个接口，又是es规定的global对象。 （1）全局作用域所有在全局作用域中声明的变量/函数都会变成window对象的属性和方法。 定义全局变量与在**window**对象上直接定义属性的差别： 全局变量不能通过delete操作符删除，而直接在wi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BOM">
+<meta property="og:url" content="https://cqtangsong.github.io/2018/08/03/bom/index.html">
+<meta property="og:site_name" content="唐宋元明清">
+<meta property="og:description" content="BOM 浏览器对象模型1. window对象BOM对象的核心就是window对象，他表示浏览器的一个实例。Window对象既是通过js访问浏览器窗口的一个接口，又是es规定的global对象。 （1）全局作用域所有在全局作用域中声明的变量/函数都会变成window对象的属性和方法。 定义全局变量与在**window**对象上直接定义属性的差别： 全局变量不能通过delete操作符删除，而直接在wi">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-08-03T12:55:56.213Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="BOM">
+<meta name="twitter:description" content="BOM 浏览器对象模型1. window对象BOM对象的核心就是window对象，他表示浏览器的一个实例。Window对象既是通过js访问浏览器窗口的一个接口，又是es规定的global对象。 （1）全局作用域所有在全局作用域中声明的变量/函数都会变成window对象的属性和方法。 定义全局变量与在**window**对象上直接定义属性的差别： 全局变量不能通过delete操作符删除，而直接在wi">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: 'cqtangsong.github.io/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://cqtangsong.github.io/2018/08/03/bom/"/>
+
+
+
+
+
+  <title>BOM | 唐宋元明清</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="cqtangsong.github.io/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">唐宋元明清</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">胜利才是一切</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="cqtangsong.github.io/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="cqtangsong.github.io/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="cqtangsong.github.io/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="cqtangsong.github.io/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="cqtangsong.github.io/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://cqtangsong.github.iocqtangsong.github.io/2018/08/03/bom/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="唐宋元明清">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="cqtangsong.github.io/images/1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="唐宋元明清">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">BOM</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-03T20:37:31+08:00">
+                2018-08-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="cqtangsong.github.io/2018/08/03/bom/" class="leancloud_visitors" data-flag-title="BOM">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="BOM-浏览器对象模型"><a href="#BOM-浏览器对象模型" class="headerlink" title="BOM 浏览器对象模型"></a>BOM 浏览器对象模型</h2><h4 id="1-window对象"><a href="#1-window对象" class="headerlink" title="1. window对象"></a>1. window对象</h4><p>BOM对象的核心就是window对象，他表示浏览器的一个实例。Window对象既是通过js访问浏览器窗口的一个接口，又是es规定的global对象。</p>
+<h5 id="（1）全局作用域"><a href="#（1）全局作用域" class="headerlink" title="（1）全局作用域"></a><strong>（</strong>1）全局作用域</h5><p>所有在全局作用域中声明的变量/函数都会变成window对象的属性和方法。<br> <strong>定义全局变量与在**</strong>window<strong>**对象上直接定义属性的差别：</strong><br> 全局变量不能通过delete操作符删除，而直接在window对象上定义的属性可以。</p>
+<h5 id="（2）窗口关系及框架"><a href="#（2）窗口关系及框架" class="headerlink" title="（2）窗口关系及框架"></a>（2）窗口关系及框架</h5><p>如果页面中包含框架，则每个框架都有自己的window对象，并且保存在frames集合中。<br> top对象：始终指向最高（外）层的框架，也就是浏览器窗口，使用它可以确保在一个框架中正确的访问另一个框架<br> parent对象：始终指向当前框架的直接上层框架；<br> self对象：它始终指向window</p>
+ <a id="more"></a> 
+<h5 id="（3）窗口位置"><a href="#（3）窗口位置" class="headerlink" title="（3）窗口位置"></a><strong>（</strong>3）窗口位置</h5><p><strong>IE\Safari\Opera\Chrome:</strong><br> screenLeft：用于表示窗口相对于屏幕左边的位置；<br> screenTop：用于表示窗口相对于屏幕上边的位置；<br> <strong>Firefox/Safari/Chrome**</strong>：**<br> screenX：用于表示窗口相对于屏幕左边的位置；<br> screenY：用于表示窗口相对于屏幕上边的位置； </p>
+<p>​    </p>
+<p> moveTo():接收的是新位置的x和y坐标值<br> moveBy():接收的是在水平和垂直方向上移动的像素数；</p>
+<p><strong>（**</strong>4<strong>**）</strong> <strong>窗口大小</strong></p>
+<p>innerWidth，innerHeight：视口区域大小；<br> outerWidth，outerHeight：浏览器窗口本身的大小；<br> resizeTo():接收浏览器窗口的新宽度和新高度；<br> resizeBy():接收新窗口与原窗口的宽度和高度之差。</p>
+<p>取得页面视口大小的函数：</p>
+<p>//取得页面视口大小</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getViewSize</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> pageSize = &#123;</span><br><span class="line"></span><br><span class="line">        pageWidth: <span class="built_in">window</span>.innerWidth,</span><br><span class="line"></span><br><span class="line">        pageHeight: <span class="built_in">window</span>.innerHeight</span><br><span class="line"></span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> pageSize.pageWidth != <span class="string">"number"</span>) &#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">document</span>.compatMode == <span class="string">"CSS1Compat"</span>) &#123;<span class="comment">//确定页面是否处于标准模式</span></span><br><span class="line"></span><br><span class="line">            pageSize.pageWidth = <span class="built_in">document</span>.documentElement.clientWidth;</span><br><span class="line"></span><br><span class="line">            pageSize.pageHeight = <span class="built_in">document</span>.documentElement.clientHeight;</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">            pageSize.pageWidth = <span class="built_in">document</span>.body.clientWidth;</span><br><span class="line"></span><br><span class="line">            pageSize.pageHeight = <span class="built_in">document</span>.body.clientHeight;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> pageSize;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="（5）打开窗口"><a href="#（5）打开窗口" class="headerlink" title="（5）打开窗口"></a><strong>（</strong>5）打开窗口</h5><p><strong>window.open( ):</strong>该方法既可以导航到一个特定的URL,也可以打开一个新的浏览器窗口。可以接受4个参数，要加载的URL、窗口目标、一个特性字符串以及一个表示新页面是否取代浏览器历史记录中当前加载页面的布尔值。该方法会返回一个指向新窗口的引用。</p>
+<p>新创建的window对象有一个opener属性，其中保存着打开它的原始窗口对象，但原始窗口中没有指向弹出框口的对象。将新创建的标签页的opener属性设置为null，即表示在单独的进程中运行新标签页，浏览器的新创建的标签页不需要与原窗口进行通信。</p>
+<p><strong>系统对话框：</strong></p>
+<p>alert/confirm/prompt</p>
+<h4 id="2、location对象"><a href="#2、location对象" class="headerlink" title="2、location对象"></a><strong>2</strong>、location对象</h4><p><strong>location</strong>对象是最有用的BOM对象之一。<br> location对象既是window对象的属性也是document对象的属性。</p>
+<h5 id="（1）解析查询字符串函数："><a href="#（1）解析查询字符串函数：" class="headerlink" title="（1）解析查询字符串函数："></a>（1）解析查询字符串函数：</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//解析查询字符串</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getQueryStringAgs</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//取得查询字符串并去掉开头的问号</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> qs = (location.search.length &gt; <span class="number">0</span> ? location.search.substring(<span class="number">1</span>) : <span class="string">""</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//保存数据的对象</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> args = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//取得每一项</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> items = qs.length ? qs.split(<span class="string">"&amp;"</span>) : [];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> item = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> name = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> value = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> i = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> len = items.length;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//逐个将每一项添加到args对象中</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>;i &lt; len;i++) &#123;</span><br><span class="line"></span><br><span class="line">        item = items[i].split(<span class="string">"="</span>);</span><br><span class="line"></span><br><span class="line">        name = <span class="built_in">decodeURIComponent</span>(item[<span class="number">0</span>]);</span><br><span class="line"></span><br><span class="line">        value = <span class="built_in">decodeURIComponent</span>(item[<span class="number">1</span>]);</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (name.length) &#123;</span><br><span class="line"></span><br><span class="line">            args[name] = value;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> args;<span class="comment">//args是一个对象，args[name] = value</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="（2）位置操作"><a href="#（2）位置操作" class="headerlink" title="（2）位置操作"></a>（<em>2</em>）位置操作</h5><p>location.assign(“<a href="http://baidu.com&quot;);//立即打开新URL并在浏览器的历史纪录中生成一条记录。" target="_blank" rel="noopener">http://baidu.com&quot;);//立即打开新URL并在浏览器的历史纪录中生成一条记录。</a></p>
+<p>location.href=”<a href="http://baidu.com&quot;;//打开新URL" target="_blank" rel="noopener">http://baidu.com&quot;;//打开新URL</a></p>
+<p>location.raplace(“<a href="http://baidu.com&quot;);//打开新URL，但是后退功能不能使用" target="_blank" rel="noopener">http://baidu.com&quot;);//打开新URL，但是后退功能不能使用</a></p>
+<p>location.reload();//重新加载页面</p>
+<p>每次修改location的属性，页面都会重新加载。</p>
+<h5 id="3、history对象"><a href="#3、history对象" class="headerlink" title="3、history对象"></a>3、history对象</h5><p>history对象保存着用户上网的历史纪录，从窗口被打开的那一刻算起。<br> 使用go（）方法可以在用户的历史纪录中任意跳转，可向前也可向后。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="cqtangsong.github.io/2018/06/19/iframe/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="cqtangsong.github.io/images/1.jpg"
+                alt="唐宋元明清" />
+            
+              <p class="site-author-name" itemprop="name">唐宋元明清</p>
+              <p class="site-description motion-element" itemprop="description">心有猛虎，细嗅蔷薇</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="cqtangsong.github.io/archives/">
+              
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="cqtangsong.github.io/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/cqtangsong" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="2359945663@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#BOM-浏览器对象模型"><span class="nav-number">1.</span> <span class="nav-text">BOM 浏览器对象模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-window对象"><span class="nav-number">1.0.1.</span> <span class="nav-text">1. window对象</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#（1）全局作用域"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">（1）全局作用域</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#（2）窗口关系及框架"><span class="nav-number">1.0.1.2.</span> <span class="nav-text">（2）窗口关系及框架</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#（3）窗口位置"><span class="nav-number">1.0.1.3.</span> <span class="nav-text">（3）窗口位置</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#（5）打开窗口"><span class="nav-number">1.0.1.4.</span> <span class="nav-text">（5）打开窗口</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、location对象"><span class="nav-number">1.0.2.</span> <span class="nav-text">2、location对象</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#（1）解析查询字符串函数："><span class="nav-number">1.0.2.1.</span> <span class="nav-text">（1）解析查询字符串函数：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#（2）位置操作"><span class="nav-number">1.0.2.2.</span> <span class="nav-text">（2）位置操作</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3、history对象"><span class="nav-number">1.0.2.3.</span> <span class="nav-text">3、history对象</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">true</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="cqtangsong.github.io/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="cqtangsong.github.io/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="cqtangsong.github.io/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="cqtangsong.github.io/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="cqtangsong.github.io/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="cqtangsong.github.io/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="cqtangsong.github.io/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="cqtangsong.github.io/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="cqtangsong.github.io/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="cqtangsong.github.io/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="cqtangsong.github.io/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="cqtangsong.github.io/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="cqtangsong.github.io/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("ltYLOYH7nCFLABiO5VRTk5Lf-gzGzoHsz", "1HYkx4BVoV7t8Cd41OUKO2fT");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
